@@ -16,9 +16,9 @@ def combine_data(data):
     The function takes data from the get_data function and the cast and the genres are combined together to be made into a bag of words
     '''
     data_combined = data.drop(columns=['movie_id', 'plot', 'original_title'])
-    data_combined['combine'] = data_combined[data_combined.columns[:3]].apply(lambda x: ','.join(x.dropna().astype(str)), axis=1)
+    data_combined['combine'] = data_combined[data_combined.columns[0:2]].apply(lambda x: ','.join(x.dropna().astype(str)), axis=1)
 
-    data_combined = data_combined.drop(columns=['cast', 'genres', 'release_date'])
+    data_combined = data_combined.drop(columns=['cast', 'genres'])
     return data_combined
 
 def transform_data(movie_data, combined_data):
