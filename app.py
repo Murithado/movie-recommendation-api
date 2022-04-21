@@ -10,3 +10,7 @@ def recommend_movies():
     reslt = recommendation.results(request.args.get('title'))
     return jsonify(reslt)
 
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+

@@ -7,7 +7,7 @@ def get_data():
     '''
     This retrieves the preprocessed data from the zipped csv file
     '''
-    movie_data = pd.read_csv('app/dataset/movie_data.csv.zip')
+    movie_data = pd.read_csv('dataset/movie_data.csv.zip')
     movie_data['original_title'] = movie_data['original_title'].str.lower()
     return movie_data
 
